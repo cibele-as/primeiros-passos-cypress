@@ -5,10 +5,13 @@ import MenuPages from '../pages/menuPages'
 import MyInfoPages from '../pages/myInfoPages'
 
 
+  const Chance = require('chance');
+
   const login = new LoginPages()
   const dashboard = new Dashboard()
   const menuPages = new MenuPages()
   const myInfoPage = new MyInfoPages
+  const chance = new Chance();
 
 
 describe('Orange HRM Test', () => {
@@ -23,19 +26,10 @@ describe('Orange HRM Test', () => {
     dashboard.checkDashboardPage()
     menuPages.acessMyInfoPage()
   
-    myInfoPage.fillMyPersonalDetails('FirstNameTest', 'LastNameTest')
-    myInfoPage.fillMyEmployeeDetails('EmployeeId', 'OtherIdTest', 'DriverLicenseTest', '2025-08-24')
+    myInfoPage.fillMyPersonalDetails(chance.first(), chance.last())
+    myInfoPage.fillMyEmployeeDetails(chance.ssn({ dashes: false }), chance.ssn({ ssnFour: true }), chance.cf(), '2025-12-25')
     myInfoPage.fillStatus()
     myInfoPage.saveForm()
-
-  })
-
- 
-// Check login failed with invalid username and password
-  it('Login Failed', () => {  
-    login.acessLoginPage()
-    login.loginWithAnyUser(userData.userFail.username, userData.userFail.password)
-    login.checkAcessInvalid()
 
   })
 

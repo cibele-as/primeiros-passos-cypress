@@ -24,12 +24,14 @@ class MyInfoPages {
         
       cy.get(this.selectorsList().firstNameField).clear().type(firstName)
       cy.get(this.selectorsList().lastNameField).clear().type(lastName)
+      
 
      }
 
 
     fillMyEmployeeDetails(employeeId, otherId, driveLicenseNumber, licenseExpiryDate) {
 
+       
         cy.get(this.selectorsList().genericField).eq(3).clear().type(employeeId)
         cy.get(this.selectorsList().genericField).eq(4).clear().type(otherId)
         cy.get(this.selectorsList().genericField).eq(5).clear().type(driveLicenseNumber)
