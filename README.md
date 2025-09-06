@@ -5,10 +5,8 @@ Cypress is a modern, JavaScript-based end-to-end testing framework that allows d
 
 ---
 
-```basch
-npm install
 
-## Prerequisites
+## Pre requisites
 
 
 > ⚠️ Note: You need to have **Node.js** installed before running this project.  
@@ -20,16 +18,19 @@ npm install
 
 Clone the repository and install dependencies:
 
-```bash
+
 git clone https://github.com/your-username/your-repo.git
+
+
 cd your-repo
+
 npm install
 
 ## Running
 
-```bash
+
 > You open the Cypress UI
 npx cypress open
 
 ## Running the automation by command line
-npy cypress 
+npn cypress run
